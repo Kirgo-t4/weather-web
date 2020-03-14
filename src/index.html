@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Погода</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-menu">
+        <nav class="top-menu__content container">
+            <div class="top-menu__item logo"><a href="#" class="img-container"><img src="./img/baro.png" alt="logo"></a></div>
+            <div id="burger" class="top-menu__burger">
+                <span></span>
+            </div>
+            <ul class="top-menu__main-item-group">   
+                <li class="top-menu__item top-menu_highlight top-menu_content_item"><a href="#">Погода сейчас</a></li>
+                <li class="top-menu__item top-menu_highlight top-menu_content_item"><a href="#">Погода на завтра</a></li>
+                <li class="top-menu__item top-menu_highlight top-menu_content_item"><a href="#">Погода на 2 недели</a></li>
+            </ul>
+            <div class="top-menu__right-item">
+                Регион: <span class="top-menu__link-region">Москва</span><i class="fas fa-search"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="screen-1 section">
+            <div class="container">
+                <h1 class="header screen-1_header-color">Погода сейчас</h1>
+                <div class="today-main">
+                    <section class="today-block">
+                        <div class="today-block__inner today-block_picture">
+                            <img src="img/winter-blizzard-snow.jpg" alt="pic1"> 
+                        </div>
+                    </section>
+                    <section class="today-block">
+                        <div class="today-block__inner temperature">
+                            <div class="today__temperature">-5.5&deg;C</div>
+                            <div class="today__temperature-changes">За последние 2 часа выросла на 1&deg;C</div>
+                            <div class="today__temperature-tomorrow">Завтра похолодает до -2&deg;C</div>
+                        </div>
+                    </section>
+                    <section class="today-block">
+                        <div class=today-block__inner>
+                            <img src="./img/overcast.png" alt="cloudy" />
+                        </div>
+                    </section>
+                
+                    <section class="indicators">
+                        <div class="indicator">
+                            <h3 class="indicator__header">
+                                Влажность
+                            </h3>
+                            <div class="indicator__value">
+                                88%
+                            </div>
+                            <div class="indicator__value-changes">
+                                За последние 2 часа выросла на 2%
+                            </div>
+                        </div>
+                        <div class="indicator">
+                            <h3 class="indicator__header">
+                                Давление
+                            </h3>
+                            <div class="indicator__value">
+                                747mm
+                            </div>
+                            <div class="indicator__value-changes">
+                                За последние 2 часа выросла на 2%
+                            </div>
+                        </div>
+                        <div class="indicator">
+                            <h3 class="indicator__header">
+                                Ветер
+                            </h3>
+                            <div class="indicator__value">
+                                <div class="indicator__arrow-wrapper">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="indicator__add-values">
+                                ЮЗ, 6 м/с
+                            </div>
+                            <div class="indicator__warning">
+                                К вечеру ожидается усиление ветра
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>  
+        </section>
+       <section class="screen-2">
+            <h2 class="header screen-2__header">Погода на завтра</h2>
+            <div class="tomorrow container">
+                <section class="tomorrow__part tomorrow-night">
+                    <h3>Ночь</h3>
+                    <div class="tomorrow__indicators">
+                        <p class="tomorrow__temp">+1&deg;C</p>
+                        <p class="tomorrow__cloud"><img src="./img/overcast.png" alt="cloudy" /></p>
+                        <p class="tomorrow__other">751mm</p>
+                        <p class="tomorrow__other">88%</p>
+                        <p class="tomorrow__other"><i class="fas fa-arrow-right"></i> З</p>
+                        <p class="tomorrow__other">3 м/c</p>
+                    </div>
+                </section>
+                <section class="tomorrow__part tomorrow-morning">
+                    <h3>Утро</h3>
+                    <div class="tomorrow__indicators">
+                        <p class="tomorrow__temp">+3&deg;C</p>
+                        <p class="tomorrow__cloud"><img src="./img/overcast.png" alt="cloudy" /></p>
+                        <p class="tomorrow__other">751mm</p>
+                        <p class="tomorrow__other">88%</p>
+                        <p class="tomorrow__other"><i class="fas fa-arrow-right"></i> З</p>
+                        <p class="tomorrow__other">3 м/c</p>
+                    </div>
+                </section>
+                <section class="tomorrow__part  tomorrow-afternoon">
+                    <h3>День</h3>
+                    <div class="tomorrow__indicators">
+                        <p class="tomorrow__temp">+2&deg;C</p>
+                        <p class="tomorrow__cloud"><img src="./img/overcast.png" alt="cloudy" /></p>
+                        <p class="tomorrow__other">751mm</p>
+                        <p class="tomorrow__other">88%</p>
+                        <p class="tomorrow__other"><i class="fas fa-arrow-right"></i> З</p>
+                        <p class="tomorrow__other">3 м/c</p>
+                    </div>
+                </section>
+                <section class="tomorrow__part tomorrow-evening">
+                    <h3>Вечер</h3>
+                    <div class="tomorrow__indicators">
+                        <p class="tomorrow__temp">+2&deg;C</p>
+                        <p class="tomorrow__cloud"><img src="./img/overcast.png" alt="cloudy" /></p>
+                        <p class="tomorrow__other">751mm</p>
+                        <p class="tomorrow__other">88%</p>
+                        <p class="tomorrow__other"><i class="fas fa-arrow-right"></i> З</p>
+                        <p class="tomorrow__other">3 м/c</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

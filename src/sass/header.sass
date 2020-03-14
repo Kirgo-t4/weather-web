@@ -1,0 +1,115 @@
+@import "./mixins.sass"
+    
+@import "./var.sass"
+    
+.top-menu
+    top: 0
+    width: 100%
+    background: $top-menu-background
+    height: 2.55em
+    min-height: $top-menu-height
+    color: $top-menu-text-color
+    font-size: $menu-font-size
+
+    &__content 
+        @extend %to-parent-height
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+    a
+        @extend %to-parent-height
+        display: block
+        color: inherit
+        display: flex
+        align-items: center
+        padding: 0 10px
+        transition: background .6s ease
+
+    li
+        extend %to-parent-height
+        margin-right: 1.7vw
+
+    .img-container
+        height: calc(#{$top-menu-height} - 10px)
+
+    &__main-item-group
+        @extend %to-parent-height
+        display: flex
+        flex-direction: row
+
+        a:hover 
+            background: #ccc
+
+
+    &__right-item
+        margin-left: auto
+
+    &__link-region
+        margin-left: 2vw
+        margin-right: 1vw
+
+    .logo
+        margin-right: 1.8vw
+
+.top-menu__burger
+    position: relative
+    width: calc(#{$top-menu-height} - 10px)
+    height: calc(#{$top-menu-height} - 20px)
+    display: none
+    cursor: pointer
+    margin-left: 10px
+
+    span, &::before, &::after 
+        position: absolute
+        left: 0
+        width: 100%
+        height: 4px
+        background: $top-menu-text-color
+
+    span 
+        top: calc((#{$top-menu-height} - 20px)/2 - 2px)
+    
+    &::before
+        top: 0
+        content: ""
+    
+    &::after
+        bottom: 0
+        content: ""
+        
+
+@media screen and ( min-width:2100px ) 
+
+    .top-menu
+        font-size: calc(7px + 0.9*21px)
+    
+
+
+@media screen and ( max-width:768px )
+
+    .top-menu__main-item-group
+        display: none
+        position: absolute
+        top: $top-menu-height
+        left: 0
+        width: 280px
+        z-index: 2
+
+        a
+            padding: 15px 20px
+            background: linear-gradient(to bottom, #c1c1c1, $top-menu-background)
+
+            &:hover
+                background: linear-gradient(to bottom, #e1e1e1, $top-menu-background)
+    
+    .show-menu
+        display: block
+
+    .top-menu__burger
+        display: block
+
+    
+
+       

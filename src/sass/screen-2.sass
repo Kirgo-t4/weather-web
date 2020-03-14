@@ -1,0 +1,124 @@
+@import './var.sass'
+@import './mixins.sass'
+
+$vert-space: 100px
+$gap : 30px
+
+.screen-2
+    font-size: $base-font-size
+    background: #ffffff
+    padding-top: $vert-space
+    padding-bottom: 50px
+
+.screen-2__header
+    @include header_props($fsize: 2.7em)
+    color: $text-color-2
+
+.tomorrow
+    margin-top: 30px
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    column-gap: $gap
+
+    h3
+        text-align: center
+
+
+.tomorrow__indicators
+    border: 1px solid #DFDFDF
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 50%
+    text-align: center
+    height: 35vw
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    padding: 3em 0
+    margin-top: 40px
+
+.tomorrow__temp
+    font-size: 2.4em
+    color: $text-color-1
+
+.tomorrow__cloud
+    width: 50%
+    margin: 0 auto
+
+    img
+        height: 100%
+        width: 100%
+
+.tomorrow__other
+    font-size: 1.8em
+    color: $text-color-4
+
+.tomorrow-night
+    .tomorrow__indicators
+        background: linear-gradient(180deg, #A3A9B9 0%, rgba(179, 182, 190, 0) 100%), #FFFFFF
+
+.tomorrow-morning
+    .tomorrow__indicators
+        background: linear-gradient(90deg, #B9BECD 0%, #CBD6F3 14.06%, #F8F9FD 49.48%), #FFFFFF
+
+
+.tomorrow-evening
+    .tomorrow__indicators
+        background: linear-gradient(269.71deg, #B9BECD 0.37%, #CBD6F3 3.47%, #F8F9FD 49.46%), #FFFFFF
+
+
+@media screen and ( min-width: 2100px )
+
+    .screen-2
+        font-size: calc(4px + 0.8*21px)
+
+    .tomorrow__indicators
+        height: 900px
+
+@media screen and ( max-width: 1000px )
+
+    .tomorrow
+        grid-template-columns: repeat(2, 1fr)
+        row-gap: calc(2 * #{$gap})
+
+    .tomorrow__part
+        h3
+            font-size: 2em
+
+    .tomorrow__part
+        padding: 0 5vw
+
+    .tomorrow__indicators
+        height: 50vw
+        margin-top: 0
+
+@media screen and ( max-width: 565px )
+
+    .tomorrow
+        grid-template-columns: repeat(2, 1fr)
+        row-gap: calc(2 * #{$gap})
+        position: relative
+
+    .tomorrow__part
+        padding: 0
+        h3
+            font-size: 2em
+        
+    .tomorrow__indicators
+        height: 40vw
+        width: 30vw
+        margin-top: 0
+        margin: 0 auto
+
+    .tomorrow__cloud
+        width: 30%
+
+    .tomorrow-afternoon
+        .tomorrow__indicators
+            height: 60vw
+            width: 32vw
+        .tomorrow__cloud
+            width: 45%
+
+    .tomorrow-evening
+        transform: translateY(10vw)
+

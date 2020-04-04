@@ -1,0 +1,32 @@
+@import './var.sass'
+
+
+.today-panel
+    position: fixed
+    top: $top-menu-height
+    left: 0
+    width: 100%
+    z-index: 10
+    background: #ffffff
+    height: 3rem
+    display: flex
+    align-items: center
+    font-size: 2rem
+    padding-left: 20px
+    box-shadow: 0px 4px 6px 0px #d4d4d4
+    color: $text-color-2
+
+    &__header
+        font-style: italic
+        color: $text-color-1
+
+    &__element
+        margin-left: 50px
+        font-weight: bold
+        display: flex
+        flex-direction: row
+        align-items: center
+        height: 100%
+
+    .temperature
+        opacity: 1

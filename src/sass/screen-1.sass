@@ -17,7 +17,7 @@ h1
     grid-template-columns: repeat(3, 1fr)
         
 
-.today-block
+.screen-1__section
     display: flex
     padding: 1em
     flex-direction: column
@@ -25,10 +25,14 @@ h1
     text-align: center
     align-items: center
 
-    .temperature
-        display: flex
-        flex-direction: column
-        justify-content: center
+.today-block
+    @include square_wh($size: 22vw)
+    border-radius: 50%
+    background: #fff
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
 
     .today__temperature
         font-size: 5em
@@ -44,12 +48,6 @@ h1
         font-size: 1em
         color: $text-color-3
 
-       
-
-    &__inner
-        @include square_wh($size: 22vw)
-        border-radius: 50%
-        background: #fff
 
     img
         width: 100%
@@ -96,7 +94,7 @@ h1
     .screen-1
         font-size: calc(4px + 0.8*21px)
 
-    .today-block__inner
+    .today-block
         @include square_wh($size: 525px)
 
     
@@ -132,7 +130,7 @@ h1
         margin-bottom: 0
         font-size: 3.1em
 
-    .today-block__inner
+    .today-block
         @include square_wh($size: 32vw)
         width: 32vw
         height: 32vw
@@ -146,10 +144,10 @@ h1
     .today-main
         grid-template-columns: repeat(1, 1fr)
 
-    .today-block
+    .screen-1__section
         position: relative
 
-    .today-block__inner
+    .today-block
         width: $min-width-of-circles
         height: $min-width-of-circles
 

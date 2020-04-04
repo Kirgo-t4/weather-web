@@ -25,24 +25,24 @@
         </nav>
     </header>
     <main>
-        <section class="screen-1 section">
+        <section id="screen-1" class="screen-1 section">
             <div class="container">
                 <h1 class="header screen-1_header-color">Погода сейчас</h1>
                 <div class="today-main">
-                    <section class="today-block">
-                        <div class="today-block__inner today-block_picture">
+                    <section class="screen-1__section">
+                        <div class="today-block today-block_picture">
                             <img src="img/winter-blizzard-snow.jpg" alt="pic1"> 
                         </div>
                     </section>
-                    <section class="today-block">
-                        <div class="today-block__inner temperature">
+                    <section id="screen-1__temp" class="screen-1__section">
+                        <div id="today-temp" class="today-block temperature">
                             <div class="today__temperature">-5.5&deg;C</div>
-                            <div class="today__temperature-changes">За последние 2 часа выросла на 1&deg;C</div>
-                            <div class="today__temperature-tomorrow">Завтра похолодает до -2&deg;C</div>
+                            <div class="today__temperature-changes not-move">За последние 2 часа выросла на 1&deg;C</div>
+                            <div class="today__temperature-tomorrow not-move">Завтра похолодает до -2&deg;C</div>
                         </div>
                     </section>
-                    <section class="today-block">
-                        <div class=today-block__inner>
+                    <section id="screen-1__cloud" class="screen-1__section">
+                        <div id="today-cloud" class=today-block>
                             <img src="./img/overcast.png" alt="cloudy" />
                         </div>
                     </section>

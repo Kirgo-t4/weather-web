@@ -1,5 +1,7 @@
 @import '/var.sass'
 
+$circles-height: 22vw
+
 .screen-1
     font-size: $base-font-size
     background: linear-gradient(to bottom, #023431 0%, #FFFFFF 100%)
@@ -24,9 +26,10 @@ h1
     justify-content: center
     text-align: center
     align-items: center
+    min-height: calc(#{$circles-height} + 2*1em)
 
 .today-block
-    @include square_wh($size: 22vw)
+    @include square_wh($size: $circles-height)
     border-radius: 50%
     background: #fff
     display: flex

@@ -21,7 +21,6 @@
 
     a
         @extend %to-parent-height
-        display: block
         color: inherit
         display: flex
         align-items: center
@@ -29,7 +28,7 @@
         transition: background .6s ease
 
     li
-        extend %to-parent-height
+        @extend %to-parent-height
         margin-right: 1.7vw
 
     .img-container
@@ -81,14 +80,14 @@
         content: ""
         
 
-@media screen and ( min-width:2100px ) 
+@media screen and ( 'min-width:2100px' )
 
     .top-menu
         font-size: calc(7px + 0.9*21px)
     
 
 
-@media screen and ( max-width:768px )
+@media screen and ( 'max-width:768px' )
 
     .top-menu__main-item-group
         display: none

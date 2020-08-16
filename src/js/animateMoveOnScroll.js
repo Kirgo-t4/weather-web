@@ -63,12 +63,10 @@ export class AnimateMoveOnScroll {
             if (( top <= this.__startOffset) && ( bottom >= this.__endOffset)) {
                 if (!this.__passthrow) {
                     if (this.__onStart) {
-                        console.log('start')
                         this.__onStart({'element': this.__element, 'direction': this.__direction })
                     }
                 }
                 if (this.__onScroll) {
-                    console.log('scroll')
                     this.__onScroll({'element': this.__element, 'top': top, 'bottom': bottom, 'direction': this.__direction, 'progress': progress})
                 }
                 
@@ -87,11 +85,13 @@ export class AnimateMoveOnScroll {
 
 }
 
-export function transforming_element(start_selector, end_selector, trigger_selector, additional_styles) {
+export function transforming_element({start_selector, end_selector, trigger_selector, additional_styles}) {
 
     const start_element = document.querySelector(start_selector)
     const end_element = document.querySelector(end_selector)
     const trigger_element = document.querySelector(trigger_selector)
+
+    if (getComputedStyle(end_element).display === 'none') return
 
 
     let styleChanges = {
@@ -99,6 +99,8 @@ export function transforming_element(start_selector, end_selector, trigger_selec
         end_element: end_element,
         additional: additional_styles || []
     }
+
+    styleChanges.end_element.style.opacity = '0'
 
     styleChanges.list_styles = []
     styleChanges.list_elements = []
@@ -137,8 +139,7 @@ export function transforming_element(start_selector, end_selector, trigger_selec
     .setEndOffset(2)
     .setOnStart(e => {
 
-        console.log(e.direction)
-        if (e.direction == 'FORWARD') {
+        if (e.direction === 'FORWARD') {
 
             styleChanges.list_styles.forEach(entry => {
                 switch(entry.type) {
@@ -155,9 +156,12 @@ export function transforming_element(start_selector, end_selector, trigger_selec
                         entry.end = entry.end_element.getBoundingClientRect()[entry.style]
                         break
                 }
-                console.log(entry)
             })
 
+        }
+
+        if (e.direction === 'REVERSE') {
+            styleChanges.end_element.style.opacity = '0'
         }
 
         if (styleChanges.start_element.parentNode) {
@@ -169,11 +173,11 @@ export function transforming_element(start_selector, end_selector, trigger_selec
         styleChanges.start_element.querySelectorAll('.not-move').forEach(e => e.style.display = 'none')
     })
     .setOnEnd(e => {
-        if (e.direction == 'FORWARD') {
+        if (e.direction === 'FORWARD') {
             styleChanges.end_element.style.opacity = '1'
             styleChanges.start_element.parentNode.removeChild(styleChanges.start_element)
         }
-        if (e.direction == 'REVERSE') {
+        if (e.direction === 'REVERSE') {
             styleChanges.start_element.parentNode.removeChild(styleChanges.start_element)
             styleChanges.parent_element.appendChild(styleChanges.start_element)
             styleChanges.start_element.style = ''
